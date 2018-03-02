@@ -22,6 +22,7 @@ public:
 	friend ostream& operator <<(ostream& output,ComplexNum& number);
 	friend ComplexNum& operator +(ComplexNum& first,const ComplexNum& second);
 	friend bool operator ==(ComplexNum& first,const ComplexNum& second);
+	friend ComplexNum& operator*(ComplexNum&);
 };
 
 #endif /* OPERATOROVERLOADING_COMPLEXNUM_H_ */

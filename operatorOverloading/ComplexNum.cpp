@@ -47,22 +47,31 @@ bool operator ==(ComplexNum& first, const ComplexNum& second) {
 	}
 }
 
+ComplexNum& operator*(ComplexNum& number) {
+	number.img = (-1) * number.img;
+
+	return number;
+}
+
 int main(int argc, char **argv) {
 
 	ComplexNum num1(1, -2);
 	cout << num1 << endl;
+	cout << *num1 << endl;
 
-	ComplexNum num2(1, 2);
-	cout << num2 << endl;
-
-	if (num1 == num2) {
-		cout << "Both numbers are equal" << endl;
-	} else {
-		cout << "Both numbers are not equal" << endl;
-	}
-
-	ComplexNum num3 = num1 + num2;
-	cout << num3 << endl;
+	cout << *num1 + ComplexNum(*num1) << endl;
+//
+//	ComplexNum num2(1, 2);
+//	cout << num2 << endl;
+//
+//	if (num1 == num2) {
+//		cout << "Both numbers are equal" << endl;
+//	} else {
+//		cout << "Both numbers are not equal" << endl;
+//	}
+//
+//	ComplexNum num3 = num1 + num2;
+//	cout << num3 << endl;
 
 	return 0;
 }
